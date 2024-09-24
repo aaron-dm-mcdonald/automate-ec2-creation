@@ -23,16 +23,16 @@ The CLI utility will default to your default region if no additional parameters 
 
 
 ### Get various EC2 information
-#### List EC2 instances
+- List EC2 instances
 `aws ec2 describe-instances`
 
-#### List VPCs
+- List VPCs
 `aws ec2 describe-vpcs`
 
-#### List Subnets
+- List Subnets
 `aws ec2 describe-subnets`
 
-#### list SG 
+- list SG 
 `aws ec2 describe-security-groups`
 
 
