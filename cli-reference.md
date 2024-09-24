@@ -2,13 +2,13 @@
 
 ## Prerequisites 
 1) Ensure you have configured your AWS CLI. Verify by executing:
-aws configure
+`aws configure`
 and press enter 4 times. Are all fields populated? 
 
 2) CLI to use: 
-Windows: Use Git Bash
-MacOS: Bash/ZSH (whatever is default)
-Linux: You all know...
+- Windows: Use Git Bash
+- MacOS: Bash/ZSH (whatever is default)
+- Linux: You all know...
 
 3) You *might* have issues with SSH if you are using a network other than your own. 
 
