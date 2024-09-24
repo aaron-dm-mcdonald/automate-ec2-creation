@@ -38,22 +38,22 @@ The CLI utility will default to your default region if no additional parameters 
 
 
 ### configure SG
-#### create SG
+- create SG
 `aws ec2 create-security-group --group-name MySecurityGroup --description "My security group" --vpc-id <your-vpc-id>`
 
-#### add SSH ingress rule to SG
+- add SSH ingress rule to SG
 `aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol tcp --port 22 --cidr 0.0.0.0/0`
 
-#### list SG 
+- list SG 
 `aws ec2 describe-security-groups`
 
 
 
 ### key pair config 
-#### create key pair 
+- create key pair 
 `aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem`
 
-#### change permissons to read only  
+- change permissons to read only  
 `chmod 400 MyKeyPair.pem`
 
 
@@ -62,11 +62,11 @@ The CLI utility will default to your default region if no additional parameters 
 
 
 ### EC2 instance creation and connect
-#### create and connect to EC2 instance 
+- create and connect to EC2 instance 
 `aws ec2 run-instances --image-id <ami-id> --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids <your-sg-id> --subnet-id <your-subnet-id>`
 
-#### Grab public DNS
+- Grab public DNS
 `aws ec2 describe-instances --instance-ids <your-instance-id> --query "Reservations[*].Instances[*].PublicDnsName" --output text`
 
-#### SSH into EC2 instance
+- SSH into EC2 instance
 `ssh -i "MyKeyPair.pem" ec2-user@<your-ec2-public-dns>`
