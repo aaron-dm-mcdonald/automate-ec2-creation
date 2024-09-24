@@ -94,4 +94,4 @@ aws ec2 run-instances
 
 - SSH into EC2 instance
 
-`ssh -i "MyKeyPair.pem" ec2-user@<your-ec2-public-dns>`
+`ssh -i "<your-key-file-name>.pem" ec2-user@<your-ec2-public-dns>`
