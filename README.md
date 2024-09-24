@@ -4,7 +4,19 @@
 
 1) Figure out what data you need to run the `aws ec2 run-instances` command
 2) Verify the CLI is configured (`aws configure`), you have a region chosen, etc
-3) NOT DONE YET
+3) Get your subnet ID
+4) Security Group
+    - Create SG
+    - Add inbound rule
+    - Get your SG ID 
+5) Get your AMI 
+6) Key Pair
+    - Create key pair
+    - Make key pair file read only
+7) Use notepad or Code to fill out the `aws ec2 run-instances` command and execute it when ready
+8) List EC2 info after step 7 
+9) Use public DNS and launch SSH Client 
+10) Connect to your EC2 instance...
 
 ## Basic script (no input or variables) 
 1) NOT IN REPO YET! 
