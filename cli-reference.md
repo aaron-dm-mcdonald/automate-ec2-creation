@@ -48,11 +48,15 @@ The CLI utility will default to your default region if no additional parameters 
 
 - add SSH ingress rule to SG
 
-`aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol tcp --port 22 --cidr 0.0.0.0/0`
+`aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol <your-protocol-here> --port <your-port-here> --cidr 0.0.0.0/0`
 
 - list SG 
 
 `aws ec2 describe-security-groups`
+
+- delete SG
+
+`aws ec2 delete-security-group --group-id <your-sg-id>`
 
 
 
@@ -74,7 +78,15 @@ The CLI utility will default to your default region if no additional parameters 
 ### EC2 instance creation and connect
 - create and connect to EC2 instance 
 
-`aws ec2 run-instances --image-id <ami-id> --count 1 --instance-type t2.micro --key-name MyKeyPair --security-group-ids <your-sg-id> --subnet-id <your-subnet-id>`
+```bash
+aws ec2 run-instances 
+--image-id <ami-id> 
+--count 1 
+--instance-type t2.micro 
+--key-name MyKeyPair 
+--security-group-ids <your-sg-id> 
+--subnet-id <your-subnet-id>`
+```
 
 - Grab public DNS
 
