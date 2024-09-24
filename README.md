@@ -14,7 +14,7 @@
     - Create key pair
     - Make key pair file read only
 7) Use notepad or Code to fill out the `aws ec2 run-instances` command and execute it when ready
-8) List EC2 info after step 7 
+8) List EC2 info to verify EC2 launched and get info needed. 
 9) Use public DNS and launch SSH Client 
 10) Connect to your EC2 instance...
 
