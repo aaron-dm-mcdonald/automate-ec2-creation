@@ -44,7 +44,7 @@ The CLI utility will default to your default region if no additional parameters 
 ### configure SG
 - create SG
 
-`aws ec2 create-security-group --group-name MySecurityGroup --description "My security group" --vpc-id <your-vpc-id>`
+`aws ec2 create-security-group --group-name <your-sg-name> --description "My security group" --vpc-id <your-vpc-id>`
 
 - add SSH ingress rule to SG
 
@@ -63,14 +63,14 @@ The CLI utility will default to your default region if no additional parameters 
 ### key pair config 
 - create key pair 
 
-`aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem`
+`aws ec2 create-key-pair --key-name <your-key-name> --query 'KeyMaterial' --output text > <your-key-file-name>.pem`
 
 - change permissons to read only  
 
-`chmod 400 MyKeyPair.pem`
+`chmod 400 <your-key-file-name>.pem`
 
 
-### List desired AMI ID
+### List desired AMI ID (amzn Linux 2023)
 
 `aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[*].[ImageId,Name]"`
 
@@ -80,7 +80,7 @@ The CLI utility will default to your default region if no additional parameters 
 
 ```bash
 aws ec2 run-instances 
---image-id <ami-id> 
+--image-id <your-ami-id> 
 --count 1 
 --instance-type t2.micro 
 --key-name MyKeyPair 
