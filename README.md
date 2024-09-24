@@ -7,9 +7,9 @@
 3) Get your subnet ID
 4) Security Group
     - Create SG
-    - Add inbound rule
     - Get your SG ID 
-5) Get your AMI 
+    - Add inbound rule
+5) Get your AMI ID
 6) Key Pair
     - Create key pair
     - Make key pair file read only
