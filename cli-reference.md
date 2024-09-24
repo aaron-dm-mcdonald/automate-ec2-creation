@@ -24,6 +24,7 @@ The CLI utility will default to your default region if no additional parameters 
 
 ### Get various EC2 information
 - List EC2 instances
+
 `aws ec2 describe-instances`
 
 - List VPCs
