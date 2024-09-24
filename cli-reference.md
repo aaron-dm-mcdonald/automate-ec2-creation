@@ -2,10 +2,8 @@
 
 ## Prerequisites 
 1) Ensure you have configured your AWS CLI. Verify by executing:
-
-    `aws configure`
-
-and press enter 4 times. Are all fields populated? 
+    - `aws configure`
+    - and press enter 4 times. Are all fields populated? 
 
 2) CLI to use: 
 - Windows: Use Git Bash
