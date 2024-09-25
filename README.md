@@ -2,21 +2,22 @@
 
 ## Manual EC2 Creation Steps
 
-1) Figure out what data you need to run the `aws ec2 run-instances` command
+1) Open CLI 
 2) Verify the CLI is configured (`aws configure`), you have a region chosen, etc
-3) Get your subnet ID
-4) Security Group
+3) Figure out what data you need to run the `aws ec2 run-instances` command
+4) Get your subnet ID
+5) Security Group
     - Create SG
     - Get your SG ID 
     - Add inbound rule
-5) Get your AMI ID
-6) Key Pair
+6) Get your AMI ID
+7) Key Pair
     - Create key pair
     - Make key pair file read only
-7) Use notepad or Code to fill out the `aws ec2 run-instances` command and execute it when ready
-8) List EC2 info to verify EC2 launched and get info needed. 
-9) Use public DNS and launch SSH Client 
-10) Connect to your EC2 instance...
+8) Use notepad or Code to fill out the `aws ec2 run-instances` command and execute it when ready
+9) List EC2 info to verify EC2 launched and get info needed. 
+10) Use public DNS and launch SSH Client 
+11) Connect to your EC2 instance...
 
 ## Basic script (no input or variables) 
 1) NOT IN REPO YET! 
