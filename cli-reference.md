@@ -83,9 +83,9 @@ aws ec2 run-instances
 --image-id <your-ami-id> 
 --count 1 
 --instance-type t2.micro 
---key-name MyKeyPair 
+--key-name <your-key-pair>
 --security-group-ids <your-sg-id> 
---subnet-id <your-subnet-id>`
+--subnet-id <your-subnet-id>
 ```
 
 - Grab public DNS
