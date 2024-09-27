@@ -1,0 +1,33 @@
+aws ec2 run-instances 
+--image-id <your-ami-id> 
+--count 1 
+--instance-type t2.micro 
+--key-name <your-key-pair>
+--security-group-ids <your-sg-id> 
+--subnet-id <your-subnet-id>
+
+
+
+<your-subnet-id>
+aws ec2 describe-subnets
+
+Get your subnet ID and VPC ID associated with the subnet ID from output 
+
+
+<your-sg-id>
+aws ec2 create-security-group --group-name <your-sg-name> --description "<your-description-here>" --vpc-id <your-vpc-id>
+Get your Security group name from output
+
+aws ec2 describe-security-groups
+
+aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol <your-protocol-here> --port <your-port-here> --cidr 0.0.0.0/0
+
+
+<your-key-pair>
+aws ec2 create-key-pair --key-name <your-key-name> --query 'KeyMaterial' --output text > <your-key-file-name>.pem
+
+chmod 400 <your-key-file-name>.pem
+
+
+<your-ami-id> 
+aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[0].ImageId" 
