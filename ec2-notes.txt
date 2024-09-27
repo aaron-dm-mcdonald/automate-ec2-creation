@@ -12,17 +12,20 @@ aws ec2 run-instances /
 
 #-----------------
 
-<your-subnet-id>
+Subnet and VPC:
 
 Get your subnet ID and VPC ID associated with the subnet ID from output:
 
 aws ec2 describe-subnets
 
+Subnet ID: 
+VPC ID: 
+
 
 
 #-----------------
 
-<your-sg-id>
+Security group config
 
 aws ec2 create-security-group --group-name <your-sg-name> --description "<your-description-here>" --vpc-id <your-vpc-id>
 
@@ -30,9 +33,11 @@ Get your Security group name from output, then add inbound rule:
 
 aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol <your-protocol-here> --port <your-port-here> --cidr 0.0.0.0/0
 
+SG ID: 
+
 #-----------------
 
-<your-key-pair>
+Key pair configuration: 
 
 We need to make a key pair and then make it read only (for the SSH client):
 
@@ -43,8 +48,19 @@ aws ec2 create-key-pair /
 
 chmod 400 <your-key-file-name>.pem
 
+Key name: 
+Key file name:  
+
 #-----------------
 
 <your-ami-id> 
 
 aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[0].ImageId" 
+
+AMI ID: 
+
+#-----------------
+
+Connect to Instance:
+
+ssh -i "<your-key-file-name>.pem" ec2-user@<your-ec2-public-dns>
