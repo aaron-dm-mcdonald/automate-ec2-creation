@@ -51,6 +51,7 @@ chmod 400 <your-key-file-name>.pem
 Key name: 
 Key file name:  
 
+
 #-----------------
 
 <your-ami-id> 
