@@ -4,7 +4,12 @@
 
 1) Open CLI 
 2) Verify the CLI is configured (`aws configure`), you have a region chosen, etc
-3) Figure out what data you need to run the `aws ec2 run-instances` command
+3) 
+    - Download this: [EC2 CLI Notes](https://github.com/aaron-dm-mcdonald/automate-ec2-creation/blob/main/ec2-notes.txt)
+    - Look at the text file
+    - Figure out what data you need to run the `aws ec2 run-instances` command
+    - As you figure out info, fill out the text file. 
+
 4) Get your subnet ID
 5) Security Group
     - Create SG
@@ -14,7 +19,7 @@
 7) Key Pair
     - Create key pair
     - Make key pair file read only
-8) Use notepad or Code to fill out the `aws ec2 run-instances` command and execute it when ready
+8) Use the text file from 3) and fill out the `aws ec2 run-instances` command and execute it when ready
 9) List EC2 info to verify EC2 launched and get info needed. 
 10) Use public DNS and launch SSH Client 
 11) Connect to your EC2 instance...

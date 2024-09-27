@@ -10,7 +10,7 @@
 - MacOS: Bash/ZSH (whatever is default)
 - Linux: You all know...
 
-3) You *might* have issues with SSH if you are using a network other than your own. 
+3) You *might* have issues with SSH if you are using a network other than yours that is public.
 
 4) You will want to watch Nana's videos. Most of these commands should match her's. I believe I use a different query for the AMI. 
 
@@ -48,7 +48,13 @@ The CLI utility will default to your default region if no additional parameters 
 
 - add SSH ingress rule to SG
 
-`aws ec2 authorize-security-group-ingress --group-id <your-sg-id> --protocol <your-protocol-here> --port <your-port-here> --cidr 0.0.0.0/0`
+```bash 
+aws ec2 authorize-security-group-ingress /
+     --group-id <your-sg-id> /
+     --protocol <your-protocol-here> /
+     --port <your-port-here> /
+      --cidr 0.0.0.0/0
+  ```
 
 - list SG 
 
@@ -72,19 +78,19 @@ The CLI utility will default to your default region if no additional parameters 
 
 ### List desired AMI ID (amzn Linux 2023)
 
-`aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[*].[ImageId,Name]"`
+`aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[0].ImageId"`
 
 
 ### EC2 instance creation and connect
 - create and connect to EC2 instance 
 
 ```bash
-aws ec2 run-instances 
---image-id <your-ami-id> 
---count 1 
---instance-type t2.micro 
---key-name <your-key-pair>
---security-group-ids <your-sg-id> 
+aws ec2 run-instances /
+--image-id <your-ami-id> /
+--count 1 /
+--instance-type t2.micro /
+--key-name <your-key-pair> /
+--security-group-ids <your-sg-id> /
 --subnet-id <your-subnet-id>
 ```
 
