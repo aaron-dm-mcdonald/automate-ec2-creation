@@ -5,8 +5,8 @@
 1) Open CLI 
 2) Verify the CLI is configured (`aws configure`), you have a region chosen, etc
 3) 
-    - Download this: [EC2 CLI Notes](https://github.com/aaron-dm-mcdonald/automate-ec2-creation/blob/main/ec2-notes.txt)
-    - Look at the text file
+    - Download and open this: [EC2 CLI Notes](https://github.com/aaron-dm-mcdonald/automate-ec2-creation/blob/main/ec2-notes.txt)
+    - Take a peek at this: [CLI Reference](https://github.com/aaron-dm-mcdonald/automate-ec2-creation/blob/main/cli-reference.md)
     - Figure out what data you need to run the `aws ec2 run-instances` command
     - As you figure out info, fill out the text file. 
 
