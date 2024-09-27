@@ -2,12 +2,12 @@
 
 This is the command needed to spin up an EC2. We need several point of information prior to executing it:
 
-aws ec2 run-instances /
---image-id <your-ami-id> /
---count 1 /
---instance-type t2.micro /
---key-name <your-key-pair> /
---security-group-ids <your-sg-id> /
+aws ec2 run-instances \
+--image-id <your-ami-id> \
+--count 1 \
+--instance-type t2.micro \
+--key-name <your-key-pair> \
+--security-group-ids <your-sg-id> \
 --subnet-id <your-subnet-id>
 
 #-----------------
@@ -41,9 +41,9 @@ Key pair configuration:
 
 We need to make a key pair and then make it read only (for the SSH client):
 
-aws ec2 create-key-pair /
-    --key-name <your-key-name> /
-    --query 'KeyMaterial' /
+aws ec2 create-key-pair \
+    --key-name <your-key-name> \
+    --query 'KeyMaterial' \
     --output text > <your-key-file-name>.pem
 
 chmod 400 <your-key-file-name>.pem

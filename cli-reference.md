@@ -22,7 +22,9 @@ The CLI utility will default to your default region if no additional parameters 
 ## Command Reference
 
 
-### Get various EC2 information
+### EC2 Commands
+
+#### Get various EC2 information
 - List EC2 instances
 
 `aws ec2 describe-instances`
@@ -41,7 +43,7 @@ The CLI utility will default to your default region if no additional parameters 
 
 
 
-### configure SG
+#### configure SG
 - create SG
 
 `aws ec2 create-security-group --group-name <your-sg-name> --description "My security group" --vpc-id <your-vpc-id>`
@@ -49,10 +51,10 @@ The CLI utility will default to your default region if no additional parameters 
 - add SSH ingress rule to SG
 
 ```bash 
-aws ec2 authorize-security-group-ingress /
-     --group-id <your-sg-id> /
-     --protocol <your-protocol-here> /
-     --port <your-port-here> /
+aws ec2 authorize-security-group-ingress \
+     --group-id <your-sg-id> \
+     --protocol <your-protocol-here> \
+     --port <your-port-here> \
       --cidr 0.0.0.0/0
   ```
 
@@ -66,7 +68,7 @@ aws ec2 authorize-security-group-ingress /
 
 
 
-### key pair config 
+#### key pair config 
 - create key pair 
 
 `aws ec2 create-key-pair --key-name <your-key-name> --query 'KeyMaterial' --output text > <your-key-file-name>.pem`
@@ -76,21 +78,21 @@ aws ec2 authorize-security-group-ingress /
 `chmod 400 <your-key-file-name>.pem`
 
 
-### List desired AMI ID (amzn Linux 2023)
+#### List desired AMI ID (amzn Linux 2023)
 
 `aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*-x86_64-gp2" --query "Images[0].ImageId"`
 
 
-### EC2 instance creation and connect
+#### EC2 instance creation and connect
 - create and connect to EC2 instance 
 
 ```bash
-aws ec2 run-instances /
---image-id <your-ami-id> /
---count 1 /
---instance-type t2.micro /
---key-name <your-key-pair> /
---security-group-ids <your-sg-id> /
+aws ec2 run-instances \
+--image-id <your-ami-id> \
+--count 1 \
+--instance-type t2.micro \
+--key-name <your-key-pair> \
+--security-group-ids <your-sg-id> \
 --subnet-id <your-subnet-id>
 ```
 
@@ -101,3 +103,11 @@ aws ec2 run-instances /
 - SSH into EC2 instance
 
 `ssh -i "<your-key-file-name>.pem" ec2-user@<your-ec2-public-dns>`
+
+
+### IAM Commands
+
+aws iam create-group --group-name --<your-group-name>
+aws iam create-user --user-name --<your-user-name>
+aws iam add-user-to-group --user-name --<your-user-name> --<your-group-name>
+aws iam get-group --group-name --<your-group-name>
